@@ -435,3 +435,14 @@ select email,phone_number from employees;
 select * from employees where last_name="Fay";
 select hire_date from employees where last_name="Grant" or last_name="Whalen";
 select first_name from employees where job_id=(select job_id from jobs where job_title="Shipping Clerk");
+select * from employees where department_id=(select department_id from departments where department_id=8);
+select * from departments order by department_id desc;
+select * from employees where last_name like "k%";
+select first_name from employees where hire_date between "1995-01-01" and "1997-01-01";
+select job_title from jobs where max_salary < 5000;
+select lower(email) from employees;
+select first_name from employees where hire_date like "1995-%-%";
+insert into employees(employee_id,first_name,last_name,email,phone_number,hire_date,job_id,salary,manager_id,department_id) VALUES
+(207,'Paul','Newton','paul.newton@sqltutorial.org','515.124.4369','1997-09-30',6,7700.00,108,11);
+delete from departments where department_name="Shipping";
+
